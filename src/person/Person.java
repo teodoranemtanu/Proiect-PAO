@@ -1,4 +1,4 @@
-package classes;
+package person;
 
 import java.util.*;
 
@@ -8,10 +8,12 @@ public abstract class Person {
     private String firstName;
     private Date dateOfBirth;
 
-    Person(String lastName, String firstName, Date dateOfBirth) {
+    Person(String lastName, String firstName, int year, int month, int day) {
         this.lastName = lastName;
         this.firstName = firstName;
-        this.dateOfBirth = dateOfBirth;
+        Calendar cal = Calendar.getInstance();
+        cal.set(year, month, day);
+        dateOfBirth = cal.getTime();
     }
 
     Person() {

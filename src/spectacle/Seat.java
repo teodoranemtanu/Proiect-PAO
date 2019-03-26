@@ -1,6 +1,8 @@
 package spectacle;
 
-public abstract class Seat {
+import java.util.Comparator;
+
+public abstract class Seat implements Comparable<Seat> {
     int number;
     int row;
     protected int visibility;
@@ -13,6 +15,10 @@ public abstract class Seat {
     }
 
     Seat() {
+        number = 0;
+        row = 0;
+        visibility = 0;
+        price = 0;
     }
 
     public int getNumber() {
@@ -23,10 +29,25 @@ public abstract class Seat {
         return row;
     }
 
-    abstract double calculatePrice();
+    abstract void calculatePrice();
 
-    public double getPrice(){
+    public double getPrice() {
         calculatePrice();
         return price;
     }
+
+
+    @Override
+    public int compareTo(Seat o) {
+        return -this.visibility - o.visibility;
+    }
+
+    @Override
+    public String toString() {
+        return ("Seat " + number +
+                " from row " + row +
+                " with visibility of " +
+                visibility + "\n");
+    }
 }
+

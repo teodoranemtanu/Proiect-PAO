@@ -6,11 +6,16 @@ public class Loge extends Seat {
     }
 
     public Loge() {
+        visibility = 3;
     }
 
     @Override
-    double calculatePrice() {
+    void calculatePrice() {
         price = 50 + 30 * visibility;
-        return price;
+    }
+
+    @Override
+    public String toString() {
+        return (super.toString() + " Loge seat");
     }
 }

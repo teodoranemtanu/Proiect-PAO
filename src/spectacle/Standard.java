@@ -6,11 +6,17 @@ public class Standard extends Seat {
     }
 
     public Standard() {
+        visibility = 1;
     }
 
     @Override
-    double calculatePrice(){
+    void calculatePrice() {
         price = 50;
-        return price;
     }
+
+    @Override
+    public String toString() {
+        return (super.toString() + " Standard seat");
+    }
+
 }

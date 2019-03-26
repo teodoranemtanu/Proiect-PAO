@@ -6,11 +6,16 @@ public class Balcony extends Seat {
     }
 
     public Balcony() {
+        visibility = 2;
     }
 
     @Override
-    double calculatePrice() {
-        price = 50 + 20 * visibility;
-        return price;
+    void calculatePrice() {
+        price = 50 + 30 * visibility;
+    }
+
+    @Override
+    public String toString() {
+        return (super.toString() + " Balcony seat");
     }
 }
