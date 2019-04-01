@@ -36,9 +36,9 @@ public class Main {
         Admin admin = new Admin();
         admin.makeReservation(client1);
         admin.cancelReservation(client1);
-        admin.makeReservation(client2);
-        admin.makeReservation(client3);
-        admin.makeReservation(client4);
+//        admin.makeReservation(client2);
+//        admin.makeReservation(client3);
+//        admin.makeReservation(client4);
 
     }
 }

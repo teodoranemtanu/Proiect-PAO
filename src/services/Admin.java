@@ -142,14 +142,13 @@ public class Admin {
 
     public Client cancelReservation(Client client) {
         Reservation reservation = reservations.get(client);
-        reservation.nrOfSeats = 0;
         for (int i = 0; i < reservation.seats.size(); i++) {
             reservation.spectacle.getAvailableSeats().add(reservation.seats.get(i));
         }
-        for (Seat x : reservation.seats) {
-            reservation.seats.remove(x);
+        for (int i = 0; i < reservation.seats.size(); i++) {
+            reservation.seats.remove(reservation.seats.get(i));
         }
-        reservations.put(client, null);
+        reservations.remove(client);
         return client;
     }
 }
