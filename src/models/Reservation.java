@@ -1,10 +1,10 @@
-package services;
+package models;
 
-import spectacle.Seat;
-import spectacle.Spectacle;
+import models.Seat;
+import models.Spectacle;
 
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 public class Reservation {
     Spectacle spectacle;
@@ -34,17 +34,5 @@ public class Reservation {
     @Override
     public String toString() {
         return spectacle.toString() + " " + nrOfSeats + seats.toString();
-    }
-
-    public boolean confirmReservation() {
-        System.out.println("This is your reservation:");
-        System.out.println(this.toString());
-        System.out.println("Do you confirm?");
-        String answer;
-        Scanner in = new Scanner(System.in);
-        answer = in.next();
-        if (answer.equals("YES"))
-            return true;
-        else return false;
     }
 }

@@ -1,4 +1,4 @@
-package spectacle;
+package models;
 
 import java.util.ArrayList;
 

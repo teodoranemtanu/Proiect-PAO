@@ -1,6 +1,4 @@
-package spectacle;
-
-import person.Actor;
+package models;
 
 import java.util.*;
 

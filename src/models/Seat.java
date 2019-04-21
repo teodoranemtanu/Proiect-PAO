@@ -1,12 +1,11 @@
-package spectacle;
-
-import java.util.Comparator;
+package models;
 
 public abstract class Seat implements Comparable<Seat> {
-    int number;
-    int row;
-    protected int visibility;
-    protected double price;
+    private int number;
+    private int row;
+    int visibility;
+    double price;
+    int type;
 
     Seat(int number, int row, int visibility) {
         this.number = number;
@@ -18,7 +17,6 @@ public abstract class Seat implements Comparable<Seat> {
         number = 0;
         row = 0;
         visibility = 0;
-        price = 0;
     }
 
     public int getNumber() {
@@ -29,12 +27,10 @@ public abstract class Seat implements Comparable<Seat> {
         return row;
     }
 
-    abstract void calculatePrice();
 
-    public double getPrice() {
-        calculatePrice();
-        return price;
-    }
+    abstract void setType();
+
+    abstract double getPrice();
 
 
     @Override

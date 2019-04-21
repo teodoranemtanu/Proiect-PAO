@@ -1,6 +1,4 @@
-package person;
-
-import java.util.Date;
+package models;
 
 public class Actor extends Person {
     private String description;
@@ -18,4 +16,5 @@ public class Actor extends Person {
     public Actor() {
         description = "";
     }
+
 }

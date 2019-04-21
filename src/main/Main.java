@@ -1,9 +1,7 @@
 package main;
 
-import person.Actor;
-import person.Client;
-import services.Admin;
-import spectacle.*;
+import models.*;
+import services.AdminService;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -33,7 +31,7 @@ public class Main {
         Client client3 = new Client("C", "D", 2000, 0, 3);
         Client client4 = new Client("C", "D", 2000, 0, 3);
 
-        Admin admin = new Admin();
+        AdminService admin = new AdminService();
         admin.makeReservation(client1);
         admin.cancelReservation(client1);
 //        admin.makeReservation(client2);
