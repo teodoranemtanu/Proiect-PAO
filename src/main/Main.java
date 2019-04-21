@@ -2,6 +2,7 @@ package main;
 
 import models.*;
 import services.AdminService;
+import services.ClientServiceImpl;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -31,9 +32,15 @@ public class Main {
         Client client3 = new Client("C", "D", 2000, 0, 3);
         Client client4 = new Client("C", "D", 2000, 0, 3);
 
+
+        ClientServiceImpl clientService = new ClientServiceImpl();
+
+        clientService.selectClient();
+
+
         AdminService admin = new AdminService();
-        admin.makeReservation(client1);
-        admin.cancelReservation(client1);
+//        admin.makeReservation(client1);
+//        admin.cancelReservation(client1);
 //        admin.makeReservation(client2);
 //        admin.makeReservation(client3);
 //        admin.makeReservation(client4);

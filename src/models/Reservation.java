@@ -10,6 +10,8 @@ public class Reservation {
     Spectacle spectacle;
     int nrOfSeats;
     ArrayList<Seat> seats;
+    int id;
+
 
     Reservation() {
         seats = new ArrayList<Seat>();

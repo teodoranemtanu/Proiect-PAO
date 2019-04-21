@@ -6,6 +6,9 @@ public abstract class Seat implements Comparable<Seat> {
     int visibility;
     double price;
     int type;
+    int id;
+
+
 
     Seat(int number, int row, int visibility) {
         this.number = number;

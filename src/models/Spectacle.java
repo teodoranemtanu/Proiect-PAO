@@ -14,10 +14,6 @@ public class Spectacle {
 
     int id;
 
-    {
-        ++count;
-    }
-
     public Spectacle(String title, Actor[] actors, String director, String type, int length, Date date, ArrayList<Seat> availableSeats) {
         this.title = title;
         this.actors = actors;
