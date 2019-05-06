@@ -1,16 +1,19 @@
 package models;
 
+import readwrite.write.Writer;
+
 public class Client extends Person {
     private String username;
     private String password;
     int id;
+    private final Writer audit = new Writer();
 
-//    public Client(String lastName, String firstName, int year, int month, int day, String username, String password, String status) {
-//        super(lastName, firstName, year, month, day);
-//        this.username = username;
-//        this.password = password;
-//        this.status = status;
-//    }
+    public Client(String lastName, String firstName, int year, int month, int day, String username, String password) {
+        super(lastName, firstName, year, month, day);
+        this.username = username;
+        this.password = password;
+        audit.writeData("Client","Constructor");
+    }
 
     public Client(String lastName, String firstName, int year, int month, int day) {
         super(lastName, firstName, year, month, day);
@@ -37,6 +40,11 @@ public class Client extends Person {
 
     public String getPassword() {
         return password;
+    }
+
+    @Override
+    public String toString() {
+        return "Client: " + username + " " + password;
     }
 }
 

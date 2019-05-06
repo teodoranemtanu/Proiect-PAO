@@ -1,26 +1,32 @@
 package services;
 
+import models.Admin;
 import models.Client;
+import readwrite.write.Writer;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 
-public class ClientServiceImpl implements ClientService {
+public class
+ClientServiceImpl implements ClientService {
     private Client client;
+    private final Writer audit = new Writer();
 
     public boolean login(String username, String password) {
+        audit.writeData("ClientServiceImpl", "login");
         return (username.equals(client.getUsername()) && password.equals(client.getPassword()));
     }
 
-    public String register(String username, String password) {
+    public Client register(String username, String password) {
         if (username.length() >= 5 && password.length() >= 4) {
             client.setUsername(username);
             client.setPassword(password);
-            return "Successfully registered";
+            audit.writeData("ClientServiceImpl", "register");
+            return client;
         }
-        return "Try again";
+        return client;
     }
 
     public void selectClient(){

@@ -1,11 +1,17 @@
 package models;
 
 public class Balcony extends Seat {
-    public Balcony(int number, int row, int visibility) {
-        super(number, row, visibility);
+    public Balcony(int number, int row) {
+        super(number, row);
+        visibility = 2;
         price = 100;
+        type = "Balcony";
     }
-
+    public Balcony(int number, int row, String type){
+        super(number, row);
+        visibility = 2;
+        this.type = type;
+    }
 
     public Balcony() {
         visibility = 2;
@@ -14,11 +20,11 @@ public class Balcony extends Seat {
 
     @Override
     void setType(){
-        this.type = 2;
+        type = "Balcony";
     }
 
     @Override
-    double getPrice() {
+    public double getPrice() {
         return 100;
     }
 

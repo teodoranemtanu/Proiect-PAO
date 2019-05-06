@@ -1,12 +1,15 @@
 package main;
 
 import models.*;
+import readwrite.read.ClientReader;
+import readwrite.read.SeatReader;
 import services.AdminService;
 import services.ClientServiceImpl;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,11 +24,11 @@ public class Main {
         Date date = a.getTime();
 
         ArrayList<Seat> availableSeats = new ArrayList<Seat>(5);
-        availableSeats.add(0, new Standard(15, 2, 2));
-        availableSeats.add(1, new Standard(16, 2, 2));
-        availableSeats.add(2, new Balcony(5, 1, 2));
-        availableSeats.add(3, new Balcony(6, 2, 3));
-        availableSeats.add(4, new Loge(7, 2, 1));
+        availableSeats.add(0, new StandardSeat(15, 2));
+        availableSeats.add(1, new StandardSeat(16, 2));
+        availableSeats.add(2, new Balcony(5, 1));
+        availableSeats.add(3, new Balcony(6, 2));
+        availableSeats.add(4, new Loge(7, 2));
 
         Client client1 = new Client("A", "B", 1999, 0, 1);
         Client client2 = new Client("C", "D", 2000, 0, 3);
@@ -33,18 +36,21 @@ public class Main {
         Client client4 = new Client("C", "D", 2000, 0, 3);
 
 
-        ClientServiceImpl clientService = new ClientServiceImpl();
 
-        clientService.selectClient();
+        ClientReader clientReader = new ClientReader();
+        ClientReader.readData();
+        Admin.getAdmin();
+        ArrayList<Client> list  = new ArrayList<Client>(ClientReader.getClientList());
+        Admin.setClients(list);
 
+        ArrayList<Client> list2 = Admin.getClients();
+        for(Client i : list2)
+            System.out.println(i);
 
-        AdminService admin = new AdminService();
-//        admin.makeReservation(client1);
-//        admin.cancelReservation(client1);
-//        admin.makeReservation(client2);
-//        admin.makeReservation(client3);
-//        admin.makeReservation(client4);
+        SeatReader seatReader = new SeatReader();
+        SeatReader.readData();
 
     }
+
 }
 

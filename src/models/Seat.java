@@ -5,15 +5,12 @@ public abstract class Seat implements Comparable<Seat> {
     private int row;
     int visibility;
     double price;
-    int type;
+    String type;
     int id;
 
-
-
-    Seat(int number, int row, int visibility) {
+    Seat(int number, int row) {
         this.number = number;
         this.row = row;
-        this.visibility = visibility;
     }
 
     Seat() {

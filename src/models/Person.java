@@ -3,7 +3,7 @@ package models;
 import java.util.*;
 
 
-public abstract class Person {
+public class Person {
     private String lastName;
     private String firstName;
     private Date dateOfBirth;

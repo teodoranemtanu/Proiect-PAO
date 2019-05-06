@@ -7,10 +7,22 @@ import java.util.ArrayList;
 
 
 public class Reservation {
-    Spectacle spectacle;
-    int nrOfSeats;
-    ArrayList<Seat> seats;
+    private Spectacle spectacle;
+    private int nrOfSeats;
+    private ArrayList<Seat> seats;
     int id;
+    static int count = 0;
+
+    public Reservation(Spectacle spectacle, int nrOfSeats, ArrayList<Seat> seats) {
+        this.spectacle = spectacle;
+        this.nrOfSeats = nrOfSeats;
+        this.seats = seats;
+        this.id = count;
+    }
+
+    static {
+        count ++;
+    }
 
 
     Reservation() {
@@ -31,6 +43,22 @@ public class Reservation {
 
     public void setNrOfSeats(int nrOfSeats) {
         this.nrOfSeats = nrOfSeats;
+    }
+
+    public ArrayList<Seat> getSeats() {
+        return seats;
+    }
+
+    public void setSeats(ArrayList<Seat> seats) {
+        this.seats = seats;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
