@@ -17,9 +17,23 @@ public class Spectacle {
     static {
         count ++;
     }
-    public Spectacle(String title, Actor[] actors, String director, String type, int length, ArrayList<Seat> availableSeats) {
+    public Spectacle(String title, String director, String type, int length) {
         this.title = title;
-        this.actors = actors;
+//        this.actors = actors;
+        this.director = director;
+        this.type = type;
+        this.length = length;
+//        this.availableSeats = availableSeats;
+        id = count;
+    }
+
+    public void setAvailableSeats(ArrayList<Seat> availableSeats) {
+        this.availableSeats = availableSeats;
+    }
+
+    public Spectacle(String title, String director, String type, int length, ArrayList<Seat> availableSeats) {
+        this.title = title;
+//        this.actors = actors;
         this.director = director;
         this.type = type;
         this.length = length;
@@ -38,10 +52,6 @@ public class Spectacle {
     public ArrayList<Seat> getAvailableSeats() {
         return availableSeats;
     }
-
-
-
-
 
     @Override
     public String toString() {

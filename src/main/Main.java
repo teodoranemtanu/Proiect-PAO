@@ -3,13 +3,13 @@ package main;
 import models.*;
 import readwrite.read.ClientReader;
 import readwrite.read.SeatReader;
+import readwrite.read.SpectacleReader;
+import readwrite.write.ObjectWriter;
 import services.AdminService;
-import services.ClientServiceImpl;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -43,13 +43,39 @@ public class Main {
         ArrayList<Client> list  = new ArrayList<Client>(ClientReader.getClientList());
         Admin.setClients(list);
 
-        ArrayList<Client> list2 = Admin.getClients();
-        for(Client i : list2)
-            System.out.println(i);
 
         SeatReader seatReader = new SeatReader();
         SeatReader.readData();
 
+        ObjectWriter writer = new ObjectWriter();
+
+
+        ArrayList<Client> list2 = Admin.getClients();
+        for(Client i : list2){
+            writer.writeData(i, "client");
+            System.out.println(i);
+        }
+
+
+
+        SpectacleReader spectacleReader = new SpectacleReader();
+        SpectacleReader.readData();
+
+        Spectacle spectacle = SpectacleReader.getSpectacleList().get(0);
+
+        ArrayList <Seat> seatList = new ArrayList<>();
+        seatList.add(SeatReader.getSeatList().get(0));
+        seatList.add(SeatReader.getSeatList().get(1));
+
+
+        Reservation reservation = new Reservation(spectacle, 2, seatList);
+
+        AdminService adminService = new AdminService();
+
+        adminService.makeReservation(list2.get(0), reservation);
+
+
+        System.out.println(Admin.getReservations().get(list2.get(0)).toString());
     }
 
 }

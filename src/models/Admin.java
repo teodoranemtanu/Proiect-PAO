@@ -12,7 +12,8 @@ public class Admin {
 
     private Admin(){
         clients = new ArrayList<>();
-
+        reservations = new HashMap<>();
+        spectacles = new ArrayList<>();
     }
 
     public static HashMap<Client, Reservation> getReservations() {

@@ -33,17 +33,6 @@
             <version>4.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>1.8.14</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.reflections</groupId>
-            <artifactId>reflections</artifactId>
-        </dependency>
-
     </dependencies>
 
     <build>

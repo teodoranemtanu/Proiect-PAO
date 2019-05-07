@@ -9,7 +9,7 @@ import java.util.List;
 public abstract class Reader<T> {
     CSVReader csvReader = null;
 
-    public List<T> readAndCreateObjects(String path) {
+    List<T> readAndCreateObjects(String path) {
 
         String[] objectDetails = null;
 
@@ -19,7 +19,6 @@ public abstract class Reader<T> {
             csvReader = new CSVReader(new FileReader(path), ',', '"', 1);
 
             while ((objectDetails = csvReader.readNext()) != null) {
-
                 T object = createObject(objectDetails);
                 objectList.add(object);
             }

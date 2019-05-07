@@ -3,14 +3,10 @@ package readwrite.read;
 import com.opencsv.CSVReader;
 import models.Client;
 
-
-import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-//import static org.graalvm.compiler.options.OptionType.User;
 
 public class ClientReader extends Reader<Client> {
 

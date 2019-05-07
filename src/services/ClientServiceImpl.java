@@ -14,6 +14,12 @@ ClientServiceImpl implements ClientService {
     private Client client;
     private final Writer audit = new Writer();
 
+    public ClientServiceImpl() { }
+
+    public ClientServiceImpl(Client client) {
+        this.client = client;
+    }
+
     public boolean login(String username, String password) {
         audit.writeData("ClientServiceImpl", "login");
         return (username.equals(client.getUsername()) && password.equals(client.getPassword()));
