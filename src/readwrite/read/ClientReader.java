@@ -17,7 +17,7 @@ public class ClientReader extends Reader<Client> {
         ClientReader clientReader = new ClientReader();
 
         clientList = clientReader.readAndCreateObjects(
-                "D:\\PAO\\ProiectPAO\\src\\readwrite\\resources\\Clients.csv");
+                "D:\\Facultate\\PAO\\ProiectPAO\\src\\readwrite\\resources\\Clients.csv");
 
         for (Client client : clientList) {
             System.out.println(client);

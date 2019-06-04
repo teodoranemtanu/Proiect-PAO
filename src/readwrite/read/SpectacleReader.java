@@ -18,7 +18,7 @@ public class SpectacleReader extends Reader<Spectacle> {
         SpectacleReader spectacleReader = new SpectacleReader();
 
         spectacleList = spectacleReader.readAndCreateObjects(
-                "D:\\PAO\\ProiectPAO\\src\\readwrite\\resources\\Spectacles.csv");
+                "D:\\Facultate\\PAO\\ProiectPAO\\src\\readwrite\\resources\\Spectacles.csv");
 
         for (Spectacle spectacle : spectacleList) {
             System.out.println(spectacle);

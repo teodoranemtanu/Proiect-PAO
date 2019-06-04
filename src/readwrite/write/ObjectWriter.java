@@ -15,7 +15,7 @@ public class ObjectWriter <T> extends Writer {
     public void writeData(T object, String type) {
         try {
 
-            file = new File("D:\\PAO\\ProiectPAO\\src\\readwrite\\resources\\" + type +"Write.csv");
+            file = new File("D:\\Facultate\\PAO\\ProiectPAO\\src\\readwrite\\resources\\" + type +"Write.csv");
             FileWriter outputFile = new FileWriter(file, true);
 
             CSVWriter writer = new CSVWriter(outputFile);

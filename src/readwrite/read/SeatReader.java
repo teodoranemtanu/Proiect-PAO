@@ -24,7 +24,7 @@ public class SeatReader extends Reader<Seat> {
         SeatReader seatReader = new SeatReader();
 
         seatList = seatReader.readAndCreateObjects(
-                "D:\\PAO\\ProiectPAO\\src\\readwrite\\resources\\Seats.csv");
+                "D:\\Facultate\\PAO\\ProiectPAO\\src\\readwrite\\resources\\Seats.csv");
 
         for (Seat client : seatList) {
             System.out.println(client);

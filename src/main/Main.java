@@ -44,39 +44,39 @@ public class Main {
         Client client = clientRepository.selectClient("client1", "parola");
         System.out.println(client.toString());
 //
-//        ClientReader clientReader = new ClientReader();
-//        ClientReader.readData();
-//        Admin.getAdmin();
-//        ArrayList<Client> list = new ArrayList<Client>(ClientReader.getClientList());
-//        Admin.setClients(list);
-//
-//        SeatReader seatReader = new SeatReader();
-//        SeatReader.readData();
-//
-//        ObjectWriter writer = new ObjectWriter();
-//
-//        ArrayList<Client> list2 = Admin.getClients();
-//        for (Client i : list2) {
-//            writer.writeData(i, "client");
-//            System.out.println(i);
-//        }
-//
-//        SpectacleReader spectacleReader = new SpectacleReader();
-//        SpectacleReader.readData();
-//
-//        Spectacle spectacle = SpectacleReader.getSpectacleList().get(0);
-//
-//        ArrayList<Seat> seatList = new ArrayList<>();
-//        seatList.add(SeatReader.getSeatList().get(0));
-//        seatList.add(SeatReader.getSeatList().get(1));
-//
-//        Reservation reservation = new Reservation(spectacle, 2, seatList);
-//
-//        AdminService adminService = new AdminService();
-//
+        ClientReader clientReader = new ClientReader();
+        ClientReader.readData();
+        Admin.getAdmin();
+        ArrayList<Client> list = new ArrayList<Client>(ClientReader.getClientList());
+        Admin.setClients(list);
+
+        SeatReader seatReader = new SeatReader();
+        SeatReader.readData();
+
+        ObjectWriter writer = new ObjectWriter();
+
+        ArrayList<Client> list2 = Admin.getClients();
+        for (Client i : list2) {
+            writer.writeData(i, "client");
+            System.out.println(i);
+        }
+
+        SpectacleReader spectacleReader = new SpectacleReader();
+        SpectacleReader.readData();
+
+        Spectacle spectacle = SpectacleReader.getSpectacleList().get(0);
+
+        ArrayList<Seat> seatList = new ArrayList<>();
+        seatList.add(SeatReader.getSeatList().get(0));
+        seatList.add(SeatReader.getSeatList().get(1));
+
+ //       Reservation reservation = new Reservation(spectacle, 2, seatList);
+
+        AdminService adminService = new AdminService();
+
 //        adminService.makeReservation(list2.get(0), reservation);
-//
-//
+
+
 //        System.out.println(Admin.getReservations().get(list2.get(0)).toString());
     }
 

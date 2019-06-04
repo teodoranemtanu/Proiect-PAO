@@ -20,7 +20,7 @@ public class ActorReader extends Reader<Actor> {
         ActorReader actorReader = new ActorReader();
 
         actorList = actorReader.readAndCreateObjects(
-                "D:\\PAO\\ProiectPAO\\src\\readwrite\\resources\\Actors.csv");
+                "D:\\Facultate\\PAO\\ProiectPAO\\src\\readwrite\\resources\\Actors.csv");
 
         for (Actor actor : actorList) {
             System.out.println(actor);
