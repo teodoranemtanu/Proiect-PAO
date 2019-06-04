@@ -12,7 +12,15 @@ public class Client extends Person {
         super(lastName, firstName, year, month, day);
         this.username = username;
         this.password = password;
-        audit.writeData("Client","Constructor");
+//        audit.writeData("Client","Constructor");
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Client(String lastName, String firstName, int year, int month, int day) {
@@ -24,6 +32,7 @@ public class Client extends Person {
     public Client() {
         username = "";
         password = "";
+        id = -1;
     }
 
     public String getUsername() {

@@ -3,31 +3,41 @@ package models;
 import models.Seat;
 import models.Spectacle;
 
-import java.util.ArrayList;
-
 
 public class Reservation {
     private Spectacle spectacle;
     private int nrOfSeats;
-    private ArrayList<Seat> seats;
+    private Client client;
     int id;
-    static int count = 0;
 
-    public Reservation(Spectacle spectacle, int nrOfSeats, ArrayList<Seat> seats) {
+    public Client getClient() {
+        return client;
+    }
+
+    public Reservation(Spectacle spectacle, int nrOfSeats) {
         this.spectacle = spectacle;
         this.nrOfSeats = nrOfSeats;
-        this.seats = seats;
-        this.id = count;
+        id = -1;
     }
 
-    static {
-        count ++;
+    public Reservation(Spectacle spectacle, int nrOfSeats, Client client) {
+        this.spectacle = spectacle;
+        this.nrOfSeats = nrOfSeats;
+        this.client = client;
     }
 
-
-    Reservation() {
-        seats = new ArrayList<Seat>();
+    public Reservation(Spectacle spectacle, Client client, int nrOfSeats, int id) {
+        this.spectacle = spectacle;
+        this.nrOfSeats = nrOfSeats;
+        this.client = client;
+        this.id = id;
     }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public Reservation(){}
 
     public Spectacle getSpectacle() {
         return spectacle;
@@ -45,14 +55,6 @@ public class Reservation {
         this.nrOfSeats = nrOfSeats;
     }
 
-    public ArrayList<Seat> getSeats() {
-        return seats;
-    }
-
-    public void setSeats(ArrayList<Seat> seats) {
-        this.seats = seats;
-    }
-
     public int getId() {
         return id;
     }
@@ -63,6 +65,6 @@ public class Reservation {
 
     @Override
     public String toString() {
-        return spectacle.toString() + " " + nrOfSeats + seats.toString();
+        return id + " " + spectacle.toString() + " " + nrOfSeats;
     }
 }

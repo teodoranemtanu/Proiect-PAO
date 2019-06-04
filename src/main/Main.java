@@ -5,6 +5,7 @@ import readwrite.read.ClientReader;
 import readwrite.read.SeatReader;
 import readwrite.read.SpectacleReader;
 import readwrite.write.ObjectWriter;
+import repositories.ClientRepository;
 import services.AdminService;
 
 import java.util.ArrayList;
@@ -30,52 +31,53 @@ public class Main {
         availableSeats.add(3, new Balcony(6, 2));
         availableSeats.add(4, new Loge(7, 2));
 
-        Client client1 = new Client("A", "B", 1999, 0, 1);
-        Client client2 = new Client("C", "D", 2000, 0, 3);
-        Client client3 = new Client("C", "D", 2000, 0, 3);
-        Client client4 = new Client("C", "D", 2000, 0, 3);
+        Client client1 = new Client("A", "B", 1999, 0, 1, "client1", "parola");
+        Client client2 = new Client("C", "D", 2000, 0, 3, "client2", "parola");
+        Client client3 = new Client("C", "D", 2000, 0, 3, "client3", "parola");
+        Client client4 = new Client("C", "D", 2000, 0, 3, "client4", "parola");
 
+        ClientRepository clientRepository= new ClientRepository();
+        //clientRepository.saveClient(client1);
+        //clientRepository.saveClient(client2);
+        //clientRepository.saveClient(client3);
 
-
-        ClientReader clientReader = new ClientReader();
-        ClientReader.readData();
-        Admin.getAdmin();
-        ArrayList<Client> list  = new ArrayList<Client>(ClientReader.getClientList());
-        Admin.setClients(list);
-
-
-        SeatReader seatReader = new SeatReader();
-        SeatReader.readData();
-
-        ObjectWriter writer = new ObjectWriter();
-
-
-        ArrayList<Client> list2 = Admin.getClients();
-        for(Client i : list2){
-            writer.writeData(i, "client");
-            System.out.println(i);
-        }
-
-
-
-        SpectacleReader spectacleReader = new SpectacleReader();
-        SpectacleReader.readData();
-
-        Spectacle spectacle = SpectacleReader.getSpectacleList().get(0);
-
-        ArrayList <Seat> seatList = new ArrayList<>();
-        seatList.add(SeatReader.getSeatList().get(0));
-        seatList.add(SeatReader.getSeatList().get(1));
-
-
-        Reservation reservation = new Reservation(spectacle, 2, seatList);
-
-        AdminService adminService = new AdminService();
-
-        adminService.makeReservation(list2.get(0), reservation);
-
-
-        System.out.println(Admin.getReservations().get(list2.get(0)).toString());
+        Client client = clientRepository.selectClient("client1", "parola");
+        System.out.println(client.toString());
+//
+//        ClientReader clientReader = new ClientReader();
+//        ClientReader.readData();
+//        Admin.getAdmin();
+//        ArrayList<Client> list = new ArrayList<Client>(ClientReader.getClientList());
+//        Admin.setClients(list);
+//
+//        SeatReader seatReader = new SeatReader();
+//        SeatReader.readData();
+//
+//        ObjectWriter writer = new ObjectWriter();
+//
+//        ArrayList<Client> list2 = Admin.getClients();
+//        for (Client i : list2) {
+//            writer.writeData(i, "client");
+//            System.out.println(i);
+//        }
+//
+//        SpectacleReader spectacleReader = new SpectacleReader();
+//        SpectacleReader.readData();
+//
+//        Spectacle spectacle = SpectacleReader.getSpectacleList().get(0);
+//
+//        ArrayList<Seat> seatList = new ArrayList<>();
+//        seatList.add(SeatReader.getSeatList().get(0));
+//        seatList.add(SeatReader.getSeatList().get(1));
+//
+//        Reservation reservation = new Reservation(spectacle, 2, seatList);
+//
+//        AdminService adminService = new AdminService();
+//
+//        adminService.makeReservation(list2.get(0), reservation);
+//
+//
+//        System.out.println(Admin.getReservations().get(list2.get(0)).toString());
     }
 
 }

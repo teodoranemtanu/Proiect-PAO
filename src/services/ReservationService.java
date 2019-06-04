@@ -20,7 +20,7 @@ public class ReservationService {
         return numberOfSeats >= number;
     }
 
-    public void chooseSeat(int number, String typeOfSeat, Spectacle spectacle){
+  /*  public void chooseSeat(int number, String typeOfSeat, Spectacle spectacle){
         audit.writeData("ReservationService", "chooseSeat");
         SpectacleService spectacleService = new SpectacleService();
         for (int i = 0; i < number; i++) {
@@ -32,6 +32,6 @@ public class ReservationService {
             }
         }
     }
-
+*/
 
 }

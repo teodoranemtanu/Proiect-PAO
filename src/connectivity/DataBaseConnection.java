@@ -1,6 +1,5 @@
-package services;
+package connectivity;
 
-import javax.xml.crypto.Data;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -29,7 +28,7 @@ public class DataBaseConnection {
         return connection;
     }
 
-    static DataBaseConnection getDataBaseConnectionInstance() {
+    public static DataBaseConnection getDataBaseConnectionInstance() {
         if (dataBaseConnection == null) {
             dataBaseConnection = new DataBaseConnection();
         }

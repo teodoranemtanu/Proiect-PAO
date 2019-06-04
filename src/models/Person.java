@@ -22,6 +22,11 @@ public class Person {
         dateOfBirth = new Date();
     }
 
+    public Person(String lastName, String firstName) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+    }
+
     public Date getDateOfBirth() {
         return dateOfBirth;
     }
